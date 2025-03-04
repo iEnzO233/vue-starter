@@ -1,18 +1,18 @@
-import './assets/main.css'
+import './assets/style/main.css'
 
-import { createApp } from 'vue'
-import { createPinia } from 'pinia'
-
-import App from './App.vue'
-import router from './router'
-
+import { createApp } from 'vue';
+import App from './App.vue';
+import router from './router';
+import { createPinia } from 'pinia';
+import Vue3PersianDatetimePicker from 'vue3-persian-datetime-picker'
 import ApiService from '@/services/ApiService';
 import JwtService from '@/services/jwtService';
 import { Icon } from '@iconify/vue';
-import Vue3PersianDatetimePicker from 'vue3-persian-datetime-picker'
 
-const app = createApp(App)
+
+const app = createApp(App);
 const pinia = createPinia();
+
 
 // Initialize ApiService
 ApiService.init(app);
@@ -21,7 +21,6 @@ ApiService.init(app);
 if (JwtService.getToken()) {
     ApiService.setHeader();
 }
-
 app.use(Vue3PersianDatetimePicker, {
     name: 'DatePicker',
     props: {
@@ -35,7 +34,6 @@ app.use(Vue3PersianDatetimePicker, {
         autoSubmit: true,
     }
 })
-
 
 app.component('Icon', Icon);
 app.use(pinia);

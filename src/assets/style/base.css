@@ -1,0 +1,16 @@
+body , html {
+    direction: rtl;
+}
+html.open {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden !important;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "KalamehWebFaNum", arial, sans-serif;
+    scroll-behavior: smooth;
+    direction: rtl;
+}

@@ -1,15 +1,3 @@
-<template>
-
-  <!-- Theme Switcher Button -->
-  <button
-    aria-label="تغییر تم"
-    class="btn btn-ghost btn-circle btn-sm fixed top-3 left-4 z-[100] flex items-center justify-center"
-    @click="toggleTheme"
-  >
-    <Icon :icon="globalStore.currentTheme === 'dark' ? 'mdi:white-balance-sunny' : 'mdi:moon-waning-crescent'" class="h-4 w-4" />
-  </button>
-</template>
-
 <script setup>
 import { onMounted, ref } from "vue";
 import { Icon } from "@iconify/vue";
@@ -41,6 +29,20 @@ onMounted(() => {
   }
 });
 </script>
+
+<template>
+
+  <!-- Theme Switcher Button -->
+  <button
+    aria-label="تغییر تم"
+    class="btn btn-ghost btn-circle btn-sm fixed top-3 left-4 z-[100] flex items-center justify-center"
+    @click="toggleTheme"
+  >
+    <Icon :icon="globalStore.currentTheme === 'dark' ? 'mdi:white-balance-sunny' : 'mdi:moon-waning-crescent'" class="h-4 w-4" />
+  </button>
+</template>
+
+
 
 <style scoped>
 /* No additional styles needed */

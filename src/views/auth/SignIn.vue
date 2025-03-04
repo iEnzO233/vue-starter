@@ -7,7 +7,7 @@
         @submit.prevent="handleLogin"
       >
         <div class="text-center flex flex-col gap-2 mb-2.5">
-          <h3 class="text-lg font-medium text-primary leading-none mb-2.5">
+          <h3 class="text-lg font-medium leading-none mb-2.5">
             ورود
           </h3>
         </div>

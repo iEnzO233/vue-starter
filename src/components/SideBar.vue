@@ -6,12 +6,6 @@ import {Icon} from "@iconify/vue";
 import {useAuthStore} from "@/stores/auth";
 import {useGlobalStore} from "@/stores/global";
 import { ScrollArea } from '@/components/ui/scroll-area'
-import { Button } from "@/components/ui/button";
-import {
-  Collapsible,
-  CollapsibleContent,
-  CollapsibleTrigger,
-} from '@/components/ui/collapsible'
 
 const router = useRouter();
 const route = useRoute();
@@ -168,37 +162,8 @@ watch(route, () => {
                     class="hover:font-medium text-light-700 dark:text-dark-800 hover:text-light-900 dark:hover:text-[#f5f5f5] px-2 "
                     :class="isCollapsed ? 'mx-auto' : ''"
                 >
-                  <Collapsible
-                      v-if="item.children"
-                      v-model:open="linkCollapsed"
-                  >
 
-                    <CollapsibleTrigger class="hover:font-medium text-light-700 dark:text-dark-800 hover:text-light-900 dark:hover:text-[#f5f5f5] px-2 py-3 ">
-                      <div class="flex items-center gap-2">
-                        <Icon :icon="item.icon" class="w-5 h-5" />
-                        <span v-if="!isCollapsed">{{ item.label }}</span>
-                      </div>
-                    </CollapsibleTrigger>
-                    <CollapsibleContent>
-                      <ul class="mt-2 flex flex-col items-center gap-2">
-                        <li
-                            v-for="subItem in item.children"
-                            :key="subItem.name"
-                            class="w-full font-medium text-light-700 dark:text-dark-800 hover:text-light-900 dark:hover:text-[#f5f5f5]"
-                        >
-                          <router-link
-                              :to="subItem.route"
-                              class="flex items-center gap-2 px-3 py-1 rounded"
-                          >
-                            <Icon :icon="subItem.icon" class="w-5 h-5" />
-                            <span  v-if="!isCollapsed">{{ subItem.label }}</span>
-                          </router-link>
-                        </li>
-                      </ul>
-                    </CollapsibleContent>
-                  </Collapsible>
                   <router-link
-                      v-else
                       :to="item.route"
                       class="flex items-center gap-3 py-3 rounded-lg transition px-2"
                       :class="{
@@ -218,13 +183,13 @@ watch(route, () => {
 
         <!-- Logout Button -->
         <div class="mx-auto py-3">
-          <Button
-              variant="destructive"
+          <button
+              class="btn"
               @click="handleLogout"
           >
             <Icon class="w-5 h-5" icon="solar:logout-2-line-duotone" />
             <span v-if="!isCollapsed">خروج</span>
-          </Button>
+          </button>
         </div>
       </div>
     </aside>
@@ -234,10 +199,10 @@ watch(route, () => {
 
 <style>
 .router-link-exact-active {
-  @apply text-primary bg-[#f7f8fb];
+  @apply  bg-[#f7f8fb];
 }
 
 .dark .router-link-exact-active {
-  @apply text-primary bg-[#2a2a3c];
+  @apply  bg-[#2a2a3c];
 }
 </style>

@@ -14,7 +14,7 @@ const props = defineProps({
   closeButton: { type: Boolean, required: false },
   toastOptions: { type: Object, required: false },
   class: { type: String, required: false },
-  style: { type: null, required: false },
+  style: { type: Object, required: false },
   offset: { type: [String, Number], required: false },
   dir: { type: String, required: false },
   icons: { type: Object, required: false },
@@ -28,16 +28,5 @@ const props = defineProps({
   <Sonner
     class="toaster group"
     v-bind="props"
-    :toast-options="{
-      classes: {
-        toast:
-          'group toast group-[.toaster]:bg-background group-[.toaster]:text-foreground group-[.toaster]:border-border group-[.toaster]:shadow-lg',
-        description: 'group-[.toast]:text-muted-foreground',
-        actionButton:
-          'group-[.toast]:bg-primary group-[.toast]:text-primary-foreground',
-        cancelButton:
-          'group-[.toast]:bg-muted group-[.toast]:text-muted-foreground',
-      },
-    }"
   />
 </template>

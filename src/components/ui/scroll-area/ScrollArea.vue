@@ -1,6 +1,10 @@
 <script setup>
-import { cn } from '@/lib/utils';
-import { ScrollAreaCorner, ScrollAreaRoot, ScrollAreaViewport } from 'reka-ui';
+import { cn } from '@/utils';
+import {
+  ScrollAreaCorner,
+  ScrollAreaRoot,
+  ScrollAreaViewport,
+} from 'reka-ui';
 import { computed } from 'vue';
 import ScrollBar from './ScrollBar.vue';
 

@@ -1,0 +1,30 @@
+@import "tailwindcss";
+@import "./base.css";
+@plugin "daisyui";
+
+@plugin "daisyui" {
+    themes: light --default, business --prefersdark;
+}
+
+.vpd-input-group {
+    @apply border overflow-hidden rounded-md;
+}
+.vpd-header {
+    @apply !bg-neutral !text-black dark:!text-white;
+}
+.vpd-body {
+    @apply !bg-neutral !text-black dark:!text-white;
+}
+.vpd-day:not([disabled=true]) {
+    @apply text-black dark:text-white;
+}
+.vpd-day[disabled=true] .vpd-day-text {
+    @apply cursor-not-allowed !text-stone-300 dark:!text-stone-700
+}
+.vpd-controls {
+    @apply flex items-center justify-between
+}
+.vpd-next ,
+.vpd-prev {
+    @apply !w-fit !h-fit p-4 !rotate-0
+}
